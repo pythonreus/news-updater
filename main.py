@@ -1,4 +1,5 @@
 from flask import Flask
+from email_validator import validate_email, EmailNotValidError
 
 app = Flask(__name__)
 
@@ -9,8 +10,18 @@ def home_route():
 	return "hello world"
 
 
+def email_validator_address(email_address):
+	try:
+		is_valid = validate_email(email_address)
+		return True, is_valid.email
+	except EmailNotValidError as e:
+		return False, str(e)
+
 def schedule_sending_email():
 	pass
+
+def populate_news_database():
+	pass	
 
 def get_all_news_updates():
 	pass
