@@ -9,6 +9,9 @@ def home_route():
 	return "hello world"
 
 
+def schedule_sending_email():
+	pass
+
 def get_all_news_updates():
 	pass
 
